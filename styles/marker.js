@@ -13,7 +13,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiY29ubmVybGVkYmV0dGVyIiwiYSI6ImNqbjVsYms5cTA1eTMzeGxrZTdjbWt0cDYifQ.W6Nphh44Guwtt9wX6pa6uA'
 }).addTo(mymap);
-$.getJSON("../../MSC/map.geojson",function(data){
+$.getJSON("../map.geojson",function(data){
     L.geoJson(data,{
         pointToLayer: function(feature,latlng){
             let marker = L.marker(latlng);
@@ -23,8 +23,8 @@ $.getJSON("../../MSC/map.geojson",function(data){
         }
     }).addTo(mymap);
 });
-/*
-var markersLayer = new L.LayerGroup();	//layer contain searched elements
+
+/*var markersLayer = new L.LayerGroup();	//layer contain searched elements
 
 mymap.addLayer(markersLayer);
 
@@ -46,7 +46,7 @@ for(i in data) {
 } */
 
 
-
+/*
 var myJSON = '{"name":"John", "age":31, "city":"New York"}';
 var myObj = JSON.parse(myJSON);
 //document.getElementById("demo").innerHTML = myObj.city;
@@ -54,4 +54,4 @@ var myObj = JSON.parse(myJSON);
 $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
-});
+}); */
