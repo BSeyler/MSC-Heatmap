@@ -13,6 +13,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiY29ubmVybGVkYmV0dGVyIiwiYSI6ImNqbjVsYms5cTA1eTMzeGxrZTdjbWt0cDYifQ.W6Nphh44Guwtt9wX6pa6uA'
 }).addTo(mymap);
+//loads geojson file and adds markers respectively
 $.getJSON("../../MSC/map.geojson",function(data){
     L.geoJson(data,{
         pointToLayer: function(feature,latlng){
@@ -23,6 +24,17 @@ $.getJSON("../../MSC/map.geojson",function(data){
         }
     }).addTo(mymap);
 });
+//search function added to map
+var controlSearch = new L.Control.Search({
+    position:'topright',
+    layer: markersLayer,
+    initial: false,
+    zoom: 12,
+    marker: false
+});
+
+mymap.addControl( controlSearch );
+
 /*
 var markersLayer = new L.LayerGroup();	//layer contain searched elements
 

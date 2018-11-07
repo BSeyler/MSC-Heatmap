@@ -12,6 +12,8 @@ The homepage of the website
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
     <!-- Leaflet API script linked so it can be used -->
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+    <script src="src/leaflet-search.js"></script>
+    <link rel="stylesheet" href="src/leaflet-search.css" />
     <link href="https://fonts.googleapis.com/css?family=Muli|Poppins" rel="stylesheet">
 </head>
 <body>
