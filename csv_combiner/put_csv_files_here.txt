@@ -1,2 +1,0 @@
-Put the HealthDeficiencies_Download.csv and Penalties_Download.csv into this folder.
-Not included because the HealthDeficiencies_Download.csv file is too large

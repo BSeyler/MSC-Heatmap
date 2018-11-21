@@ -4,6 +4,15 @@ marker.js
 Script that puts the map on the page, adds markers to the map and handles the markers events.
  */
 
+//This fixes an issue with malformed XML parsing in firefox specifically
+$.ajaxSetup({beforeSend: function(xhr){
+        if (xhr.overrideMimeType)
+        {
+            xhr.overrideMimeType("application/json");
+        }
+    }
+});
+
 //create the map and sets the view of washington
 var mymap = L.map('mapid').setView([47.75, -120.74], 7);
 let geoData = new L.geoJson();
@@ -32,7 +41,7 @@ function addMarkersToMap(data,mymap){
         propertyName: 'PROVNAME',
         marker: false,
         moveToLocation: function (latlng) {
-            mymap.setView(latlng, 12);
+            mymap.setView(latlng, 15);
         }
     });
     //open popup when search is successful
@@ -84,5 +93,5 @@ function addCircleMarkers(data,mymap) {
 mymap.addLayer(geoData);
 
 //link geojson file using jquery and call the addMarkersToMap and addCircleMarkersToMap
-$.getJSON("../MSC/map.geojson", function(data) { addMarkersToMap(data, mymap); });
-$.getJSON("../MSC/map.geojson", function(data) { addCircleMarkers(data, mymap); });
+$.getJSON("../MSC-Heatmap/map.geojson", function(data) { addMarkersToMap(data, mymap); });
+$.getJSON("../MSC-Heatmap/map.geojson", function(data) { addCircleMarkers(data, mymap); });
