@@ -1,0 +1,27 @@
+/*style for the top left logo*/
+#logo {
+    width: 250px;
+    height: auto;
+}
+
+.sort-help-button {
+    margin: 0;
+}
+
+.nav-link {
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+/*Style for the map*/
+#mapid {
+
+    height: 80%;
+    width: 100%;
+    border: 1px solid #E6EAEA;
+
+}

@@ -27,9 +27,29 @@ function addMarkersToMap(data,mymap){
     //create new geojson object
     geoData = new L.geoJson(data,{
         pointToLayer: function(feature,latlng) {
-            let marker = L.marker(latlng);
-            //when the marker is clicked on, displays corresponding
-            //name , address and rating
+            //variable assigned to rating
+            let rating = feature.properties.SCOPE;
+            let marker;
+            //array of colors assigned to each rating
+            var colors = {
+                "A": 'green',
+                "B": 'green',
+                "C": 'green',
+                "D": 'green',
+                "E": 'orange',
+                "F": 'orange',
+                "G": 'orange',
+                "H": 'red',
+                "I": 'red',
+                "J": 'red',
+                "K": 'red',
+                "L": 'red'
+            }
+            //variable to store the color of the marker to be passed in the function below
+            let colorOfMarker = colors[feature.properties.SCOPE];
+            marker =
+                new L.marker(latlng,
+                    {icon: L.AwesomeMarkers.icon({icon:'home',prefix:'fa',markerColor: colorOfMarker}) });
             marker.bindPopup(feature.properties.PROVNAME + '<br/>' + feature.properties.ADDRESS
                 + '<br/>' + '<strong>Rating: ' + feature.properties.SCOPE + '</strong>');
             return marker;
@@ -53,41 +73,6 @@ function addMarkersToMap(data,mymap){
     });
     mymap.addControl( searchControl);
     geoData.addTo(mymap);
-}
-//function that adds circlemarkers, the color is determined by the rating
-function addCircleMarkers(data,mymap) {
-    //create new layer
-    geoDataTwo = new L.geoJson(data,{
-        pointToLayer: function(feature,latlng) {
-            //colors assigned to feature.properties.SCOPE
-            var colors = {
-                "A": 'green',
-                "B": 'green',
-                "C": 'green',
-                "D": 'green',
-                "E": 'orange',
-                "F": 'orange',
-                "G": 'orange',
-                "H": 'red',
-                "I": 'red',
-                "J": 'red',
-                "K": 'red',
-                "L": 'red'
-            }
-            //return circle marker
-            return new L.CircleMarker(latlng,{
-                radius:7,
-                fillColor: colors[feature.properties.SCOPE],
-                color: colors[feature.properties.SCOPE],
-                weight: 1.2,
-                opacity: 1,
-                fillOpacity: 0.5,
-                clickable: true
-            })
-        }
-    });
-    //add new layer to the map
-    geoDataTwo.addTo(mymap);
 }
 //add layer
 mymap.addLayer(geoData);

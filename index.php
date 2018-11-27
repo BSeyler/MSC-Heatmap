@@ -10,11 +10,12 @@ The homepage of the website
     <!-- Linked style sheets that are necessary for this page -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles/global.css" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+    <link href="styles/leaflet.awesome-markers.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
     <!-- Leaflet API script linked so it can be used -->
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="scripts/leaflet.awesome-markers.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="leaflet.ajax.min.js"></script>
     <script src="src/leaflet-search.js"></script>
