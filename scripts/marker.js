@@ -133,3 +133,51 @@ function addMarkersToMap(data,mymap){
     mymap.addControl( searchControl);
     geoData.addTo(mymap);
 }
+//add layer
+mymap.addLayer(geoData);
+
+$.getJSON("../MSC-Heatmap/washington.geojson", function(json) {
+   
+    var geoList = new L.Control.GeoJSONSelector(L.geoJson(json), {
+        zoomToLayer: true,
+        activeListFromLayer: true,
+        //activeLayerFromList: true,
+        //listOnlyVisibleLayers: true,
+        position: 'bottomright',
+        collapsed: false
+    }).addTo(mymap);
+
+    geoList.on('selector:change', function(e) {
+        var jsonObj = $.parseJSON(JSON.stringify(e.layers[0].feature.properties.NAME) );
+        //JSON.parse(jsonObj);
+        //console.log(e.layers[1].feature.properties.NAME);
+        console.log(jsonObj);
+        //console.log(jsonObj);
+        //console.log(feature.properties.name); */
+        var html = 'Selection:<br /><table border="1">';
+        $.each(jsonObj, function(key, value){
+            html += '<tr>';
+            html += '<td>' + key.replace(":", " ") + '</td>';
+            html += '<td>' + value + '</td>';
+            html += '</tr>';
+        });
+        html += '</table>';
+
+        $('.selection').html(html);
+    });
+
+    mymap.addControl(function() {
+        var c = new L.Control({position:'bottomright'});
+        c.onAdd = function(mymap) {
+            return L.DomUtil.create('pre','selection');
+        };
+        return c;
+    }());
+    //mymap.addControl(geoList);
+
+});
+
+//link geojson file using jquery and call the addMarkersToMap and addCircleMarkersToMap
+$.getJSON("../MSC-Heatmap/map.geojson", function(data) { addMarkersToMap(data, mymap); });
+//$.getJSON("../MSC-Heatmap/washington.geojson", function(data) { addRegionsToMap(data, mymap); });
+//$.getJSON("../MSC-Heatmap/map.geojson", function(data) { addCircleMarkers(data, mymap); });

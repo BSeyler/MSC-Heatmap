@@ -1,6 +1,7 @@
 /*
   Leaflet.AwesomeMarkers, a plugin that adds colorful iconic markers for Leaflet, based on the Font Awesome icons
   (c) 2012-2013, Lennard Voogdt
+
   http://leafletjs.com
   https://github.com/lvoogdt
 */
@@ -111,11 +112,14 @@
 
             this._setIconStyles(div, 'shadow');
             return div;
-        }
+      }
     });
-
+        
     L.AwesomeMarkers.icon = function (options) {
         return new L.AwesomeMarkers.Icon(options);
     };
 
 }(this, document));
+
+
+
