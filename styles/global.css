@@ -1,8 +1,32 @@
 /**
-Bigger four
-css for the main page
+ * Bigger Four
+ * global.css
+ *
+ * This file contains CSS for the main index of the site
  */
 
+#marker-image {
+    width: 100%;
+    height: auto;
+}
+
+.help-row {
+    padding-bottom: 10%;
+    padding-left: 0;
+    
+}
+
+#help-text {
+    font-size: 12px;
+}
+
+html {
+    width: 100%;
+}
+
+.main-row {
+    height: 100%;
+}
 /*Style for the map*/
 #mapid {
 
@@ -21,15 +45,14 @@ css for the main page
 
 /*style for the top left logo*/
 #logo {
-    width: 75%;
-    height: auto;
-    border-right: 1px solid #E6EAEA;
-    padding-right: 40px;
+    width: 100%;
+    margin-bottom: 2em;
 }
 
 /*Style for bootstrap elements*/
 .col-2 {
     padding-right: 0px;
+
 }
 
 .col-10 {
@@ -40,7 +63,6 @@ css for the main page
 #navbar {
     background-color: #f4f7f6;
     color: #000000;
-    border: 2px solid #E6EAEA;
 }
 
 /*footer background color*/
@@ -50,7 +72,7 @@ css for the main page
 
 /*Footer styles*/
 footer.page-footer a {
-    color: #fff;
+    color: black;
     font-family: 'Niramit', sans-serif;
     font-size: 18px;
 }
@@ -59,13 +81,7 @@ footer.page-footer a {
     background-color: #fff;
 }
 
-footer p {
-    color: #000;
-}
 
-footer.page-footer a {
-    color: #000;
-}
 
 footer {
     border: 1px solid #E6EAEA;
@@ -75,9 +91,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.footer-copyright {
-    background-color: #3F3F3F;
-}
+
 
 .footer-copyright p {
     color: #DBE0DF;
@@ -88,26 +102,6 @@ i {
     color: #124D7B;
 }
 
-#wrapper {
-
-
-}
-
-#wrapper.toggled {
-    padding-left: 250px;
-}
-
-#sidebar-wrapper {
-
-
-
-    width: 0;
-    height: 100%;
-
-
-    background: #000;
-
-}
 
 h6 {
     font-family: 'Niramit', sans-serif;
@@ -137,30 +131,26 @@ h6 {
 /* Sidebar Styles */
 
 .sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    margin: 0;
+    width: 100%;
+    margin: 0 10%;
     padding: 0;
     list-style: none;
-    border-right: 1px solid #E6EAEA;
-    height: 100%;
 }
 
 .sidebar-nav li {
+    margin-right: 20%;
     text-indent: 20px;
     line-height: 40px;
 }
 
 .sidebar-nav li a {
-    display: block;
     text-decoration: none;
-    color: #999999;
+    color: black;
     font-family: 'Niramit', sans-serif;
     font-size: 18px;
 }
 
-.sidebar-nav li a:hover {
+.sidebar-nav li:hover {
     text-decoration: none;
     color: #fff;
     background: #42AB9E;
@@ -185,29 +175,6 @@ h6 {
     background: none;
 }
 
-/*Sidebar min width styles*/
-@media(min-width:768px) {
-    #wrapper {
-        padding-left: 0;
-    }
-    #wrapper.toggled {
-        padding-left: 250px;
-    }
-    #sidebar-wrapper {
-        width: 0;
-    }
-    #wrapper.toggled #sidebar-wrapper {
-        width: 250px;
-    }
-    #page-content-wrapper {
-        padding: 20px;
-        position: relative;
-    }
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
-}
 
 .leaflet-container {
     overflow: visible;
@@ -221,4 +188,68 @@ h6 {
 /*Styles for the icons*/
 #icons {
     margin-left: 45%;
+}
+
+
+
+/*HIDDEN NAV BAR*/
+
+#logo-hidden {
+    /*width: 100%;*/
+    width: 200px;
+    height: auto;
+}
+
+.sort-help-button {
+    margin: 0;
+}
+
+.nav-link-hide {
+    font-size: 1.4em;
+    margin: 0 10px;
+    /*border-bottom: 1px darkgrey solid;*/
+}
+
+@media (max-width: 576px) {
+
+    /*style for the top left logo*/
+    .container-fluid {
+        background-color: rgb(97.3%, 97.6%, 98%);
+        height: 100%;
+    }
+
+
+    .map-row {
+        height: 80%;
+    }
+
+    #mapid {
+        height: 100%;
+    }
+    #logo {
+        /*width: 100%;*/
+        width: 200px;
+        height: auto;
+    }
+
+    .sort-help-button {
+        margin: 0;
+    }
+
+    .nav-link {
+        font-size: 1.4em;
+        margin: 0 10px;
+        /*border-bottom: 1px darkgrey solid;*/
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+
+    /*Style for the map*/
+    #mapid {
+
+        width: 100%;
+        border: 1px solid #E6EAEA;
+    }
 }

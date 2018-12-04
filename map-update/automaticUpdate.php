@@ -48,6 +48,17 @@
         $success = false;
     }
 
+    //Clean up the CSV directory
+    cleanUp();
+
+
+    //Run convertCsvtoGeoJSON.py
+    $command = escapeshellcmd('python /home/bseylerg/public_html/msc/MSC-Heatmap/csv-updater/convertCsvtoGeoJSON.py');
+    $output =  popen($command, "r");
+
+    //Close python file
+    pclose($output);
+
     //Open the log file,
     $file=fopen("LOG.txt","a+") or exit("Unable to open file!");
 
@@ -64,14 +75,17 @@
         fwrite($file, "Message: Failed to download files");
     }
 
+    //End first event with a new line,
+    fwrite($file, "\n");
+
+    fwrite($file, "Message: Attempted to convert to convert CSV to GeoJSON!");
+
+
     //End with a new line,
     fwrite($file, "\n");
 
     //And close the file
     fclose($file);
-
-    //Clean up the CSV directory
-    cleanUp();
 
     /**
      * This function cleans up the CSV directory after the output CSV is made
@@ -225,7 +239,7 @@
         $fp = fopen('csv/nursingHomeData.csv', 'w');
 
         //Create header row
-        $header = array('name', 'address', 'latitude', 'longitude', 'fine_amount', 'num_fines', 'scope');
+        $header = array('LATITUDE', 'LONGITUDE', 'ADDRESS', 'NAME', 'FINE_AMOUNT', 'NUM_FINES', 'SCOPE');
 
         //Add it to the csv
         fputcsv($fp, $header);
@@ -235,10 +249,10 @@
             $addressString = $nursinghome['address'] . ', ' . $nursinghome['city'] . ' ' . $nursinghome['zip'] . ', ' . ' WA';
             //If geocoding is on, add latitude and longitude to output fille
             if (!$geocoding) {
-                $line = array($nursinghome['name'], $addressString, 'lat', 'long', $nursinghome['fines'], $nursinghome['penalties'], $nursinghome['scope']);
+                $line = array('lat', 'long', $addressString, $nursinghome['name'], $nursinghome['fines'], $nursinghome['penalties'], $nursinghome['scope']);
             } //Else, add lat/long as placeholders
             else {
-                $line = array($nursinghome['name'], $addressString, $nursinghome['latitude'], $nursinghome['longitude'], $nursinghome['fines'], $nursinghome['penalties'], $nursinghome['scope']);
+                $line = array($nursinghome['latitude'], $nursinghome['longitude'], $addressString, $nursinghome['name'], $nursinghome['fines'], $nursinghome['penalties'], $nursinghome['scope']);
             }
 
             //Add line to the CSV
