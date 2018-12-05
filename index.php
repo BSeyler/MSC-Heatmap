@@ -80,16 +80,16 @@ The homepage of the website
                 <div class="row help-row">
                     <div class="col-12">
                         <img src="images/square-click.png" id="marker-image">
-                            <p id="help-text">
-                                <h5>Click a Marker!</h5> Click on a marker to view more information about the nursing home, like fines, rating, and number of fines.
-                            </p>
+                        <p id="help-text">
+                        <h5>Click a Marker!</h5> Click on a marker to view more information about the nursing home, like fines, rating, and number of fines.
+                        </p>
                     </div>
                 </div>
                 <div class="row help-row">
                     <div class="col-12">
                         <img src="images/square-search.png" id="marker-image">
                         <p id="help-text">
-                            <h5>Search For a Home!</h5> Click the search button and lookup a nursing home by it's name to find it on the map!
+                        <h5>Search For a Home!</h5> Click the search button and lookup a nursing home by it's name to find it on the map!
                         </p>
                     </div>
                 </div>
@@ -97,10 +97,11 @@ The homepage of the website
                     <div class="col-12">
                         <img src="images/square-colors.png" id="marker-image">
                         <p id="help-text">
-                            <h5>Pay attention to the Colors!</h5>
-                            <strong>Red: </strong> I - L <br>
-                            <strong>Orange:</strong> E - H <br>
-                            <strong>Green</strong> A - D
+                        <h5>Pay attention to the Colors!</h5>
+                        The different color markers represent different health ratings!
+                        <strong>Red: </strong> I - L <br>
+                        <strong>Orange:</strong> E - H <br>
+                        <strong>Green</strong> A - D
                         </p>
                     </div>
                 </div>

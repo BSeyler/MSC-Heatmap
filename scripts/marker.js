@@ -28,6 +28,13 @@ let controlLayers = L.control.layers().addTo(mymap);
 let geoData = L.layerGroup();
 
 
+
+/**
+ * This function populates the maps markers into the map object
+ *
+ * @param data This is
+ * @param mymap This is the map object that all data is stored in.
+ */
 function addMarkersToMap(data,mymap){
 
     let categories = {},
