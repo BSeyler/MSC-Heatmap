@@ -1,0 +1,269 @@
+/**
+Bigger four
+css for the main page
+ */
+
+#marker-image {
+    float: left;
+    width: 37%;
+    /*shape-margin:20px;*/
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.help-row {
+    padding-bottom: 10%;
+    padding-left: 0;
+    margin: 0 auto;
+    
+}
+
+#help-text {
+    line-height: 1.6;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-align: justify;
+    margin: 0;
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+html {
+    width: 100%;
+}
+
+.main-row {
+    height: 100%;
+}
+/*Style for the map*/
+#mapid {
+
+    height: 100%;
+    width: 100%;
+    border: 1px solid #E6EAEA;
+    padding-left: 1em;
+    margin-left: 1em;
+
+}
+
+/*Style for the upload button*/
+#upload {
+    position: absolute;
+    left:94%;
+    bottom: 82%;
+}
+
+/*style for the top left logo*/
+#logo {
+    width: 100%;
+    margin-bottom: 2em;
+    margin-left: 8%;
+}
+
+/*Style for bootstrap elements*/
+.col-2 {
+    padding: 0;
+
+}
+
+.col-10 {
+    padding-left: 0;
+}
+
+/*navbar styles*/
+#navbar {
+    background-color: #f4f7f6;
+    color: #000000;
+}
+
+/*footer background color*/
+.indigo {
+    background-color: #FCFCFC;
+}
+
+/*Footer styles*/
+footer.page-footer a {
+    color: black;
+    font-family: 'Niramit', sans-serif;
+    font-size: 18px;
+}
+
+.rgba-white-light {
+    background-color: #fff;
+}
+
+
+
+footer {
+    border: 1px solid #E6EAEA;
+}
+body {
+    background-color: #f4f7f6;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.footer-copyright p {
+    color: #DBE0DF;
+}
+
+/*Sidebar styles*/
+i {
+    color: #124D7B;
+}
+
+
+h6 {
+    font-family: 'Niramit', sans-serif;
+    font-size: 18px;
+    color: #000;
+    text-indent: 20px;
+    font-weight: bold;
+
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    width: 100%;
+    margin: 0 10%;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin-right: 20%;
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Niramit', sans-serif;
+    font-size: 18px;
+}
+
+.sidebar-nav li:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #42AB9E;
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+    color: #42AB9E;
+    background: none;
+}
+
+
+.leaflet-container {
+    overflow: visible;
+}
+
+/*search bar styles*/
+#search {
+    padding-top: 10px;
+}
+
+/*Styles for the icons*/
+#icons {
+    margin-left: 45%;
+}
+
+
+
+/*HIDDEN NAV BAR*/
+
+#logo-hidden {
+    /*width: 100%;*/
+    width: 200px;
+    height: auto;
+}
+
+.sort-help-button {
+    margin: 0;
+}
+
+.nav-link-hide {
+    font-size: 1.4em;
+    margin: 0 10px;
+    /*border-bottom: 1px darkgrey solid;*/
+}
+
+@media (max-width: 576px) {
+
+    /*style for the top left logo*/
+    .container-fluid {
+        background-color: rgb(97.3%, 97.6%, 98%);
+        height: 100%;
+    }
+
+
+    .map-row {
+        height: 80%;
+    }
+
+    #mapid {
+        height: 100%;
+    }
+    #logo {
+        /*width: 100%;*/
+        width: 200px;
+        height: auto;
+    }
+
+    .sort-help-button {
+        margin: 0;
+    }
+
+    .nav-link {
+        font-size: 1.4em;
+        margin: 0 10px;
+        /*border-bottom: 1px darkgrey solid;*/
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+
+    /*Style for the map*/
+    #mapid {
+
+        width: 100%;
+        border: 1px solid #E6EAEA;
+    }
+}
